@@ -20,30 +20,27 @@ May the following convention be suggested.
 
 * Parse in lexical order.
 ** `/usr/lib/server-config.d`
+** `/usr/local/etc/server-config.d`
 ** `/etc/server-config.d`
-** `~/.config/server-config.d`
+** Optionally, custom folders
 ** Similar to how systemd would parse these folders. I.e. for example start with parsing  `/usr/lib/server-config.d/30_default.conf`, followed by `/usr/lib/server-config.d/31_other.conf`, followed by `/etc/server-config.d/30_user.conf`, followed by `/etc/server-config.d/40_user.conf` and so forth.
-* The pseudo code in shell / bash:
+* The file used to group the configurations would be `/etc/server/main.config`, with the contents:
+
 
 ```
-for file_name in /usr/lib/server-config.d/*.conf ; do
-   file_list="$file_list $file_name"
-done
+# lines starting with # are ignored
 
-for file_name in /etc/server-config.d/*.conf ; do
-   file_list="$file_list $file_name"
-done
+# predefined
+include /usr/lib/server-config.d/*.conf
+include /usr/local/etc/server-config.d/*.conf
+include /etc/server-config.d/*.conf
 
-for file_name in /home/.config/server-config.d/*.conf ; do
-   file_list="$file_list $file_name"
-done
-
-for item in $file_list ; do
-   source "$item"
-done
+# custom configurations may be added here
 ```
 
-* config options:
+** In theory, any path could be added to this file, even within `$HOME`. However, we are still uncertain of the usefulness of adding configurations to `$HOME` instead of one of the ones within `/usr/` and `/etc/`. It would make it possible to make customizations when the user does not have privileges to write outside of `$HOME`, but running a server on a system which you do not have such access seems unlikely. Feedback on this is also appreciated.
+
+* `.conf` files would contain options such as:
 
 ```
 # lines starting with # are ignored
