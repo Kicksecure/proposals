@@ -3,8 +3,6 @@
 - Ticket: https://phabricator.whonix.org/T635
 - File: https://github.com/Whonix/proposals/blob/master/635-listen-port-convention.txt
 
-Feedback on the ticket and pull requests on the repository are welcome.
-
 # Description
 
 A convention on listen port local or all network interfaces etc. would be desirable.
@@ -19,7 +17,7 @@ Due to Whonix's workstation, gateway split design, applications using Tor epheme
 
 A global configuration file such as `/etc/ricochet-im.conf` works for system administrators, but not for derivatives.
 
-Why is a config folder `/etc/ricochet-im.d` strongly preferred over a config file `/etc/ricochet-im.conf`? When a config file such as `/etc/ricochet-im.conf` is owned by one package `ricochet-im`, it cannot be owned by another package. If another package was to modify it using `sed` or so, then dpkg would regard that file as user modified. The problem is, next time that config file is changed by upstream, this throws an interactive dpkg conflict resolution dialog at the user, which is a usability bug. (example [0]) `sed` style config modifications are a Debian policy violation as well.
+Why is a config folder `/etc/ricochet-im.d` strongly preferred over a config file `/etc/ricochet-im.conf`? When a config file such as `/etc/ricochet-im.conf` is owned by one package `ricochet-im`, it cannot be owned by another package. If another package was to modify it using `sed` or so, then dpkg would regard that file as user modified. The problem is, next time that config file is changed by upstream, this throws an interactive dpkg conflict resolution dialog at the user, which is a usability bug. (example [2]) `sed` style config modifications are a Debian policy violation as well.
 
 So far we at Whonix had discussions with ricochet-im, onionshare, ZeroNet and unMessage. They are all interested to make their applications compatible with Whonix. However, asking each individual project to `/etc/application-specific.d` folder where Whonix then could drop a `/etc/application-specific.d/30_whonix.conf` that says `listen=10.152.152.10` is a lot duplicate effort and not that desirable for these applications because they have not yet any need for `/etc/application-specific.d/`.
 
@@ -110,4 +108,8 @@ To prevent different applications to parse the configuration differently, to avo
 
 Any questions? Any suggestions? What do you think?
 
-[0]: https://www.whonix.org/wiki/Whonix_Configuration_Files#dpkg_interactive_conflict_resolution_dialog
+Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
+
+[0]: https://phabricator.whonix.org/T635
+[1]: https://github.com/Whonix/proposals/blob/master/635-listen-port-convention.txt
+[2]: https://www.whonix.org/wiki/Whonix_Configuration_Files#dpkg_interactive_conflict_resolution_dialog
