@@ -1,3 +1,5 @@
+# Listen Port Convention
+
 A convention on listen port local or all network interfaces etc. would be desirable.
 
 At the moment it looks like there is no convention for where server applications are configured to listen by default, on localhost vs. all interfaces. Looks like deciding that is up to the upstream author of the software as well as the packager. Then it's up to the system administrator to decide on where the server application should listen. There is no great place for derivatives to globally modify this setting.

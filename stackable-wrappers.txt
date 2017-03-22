@@ -1,3 +1,5 @@
+# Stackable Wrappers
+
 In Debian there is no such thing as stackable wrappers. Would be desirable to have.
 
 A wrapper in this context is defined as a minimal script that automatically prepends something in front of a program that the user wants to run. Or appends something such as default command line parameters.
