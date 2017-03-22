@@ -19,21 +19,21 @@ Having these applications auto detect Whonix also does not seem like great solut
 May the following convention be suggested.
 
 * Parse in lexical order.
-** `/usr/lib/server-config.d`
-** `/usr/local/etc/server-config.d`
-** `/etc/server-config.d`
+** `/etc/listen.d`
+** `/usr/local/etc/listen.d`
+** `/usr/lib/listen.d`
 ** Optionally, custom folders
-** Similar to how systemd would parse these folders. I.e. for example start with parsing  `/usr/lib/server-config.d/30_default.conf`, followed by `/usr/lib/server-config.d/31_other.conf`, followed by `/etc/server-config.d/30_user.conf`, followed by `/etc/server-config.d/40_user.conf` and so forth.
-* The file used to group the configurations would be `/etc/server/main.config`, with the contents:
+** Similar to how systemd would parse these folders. I.e. for example start with parsing  `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf`, followed by `/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/40_user.conf` and so forth.
+* The file used to group the configurations would be `/etc/listen.conf`, with the contents:
 
 
 ```
 # lines starting with # are ignored
 
 # predefined
-include /usr/lib/server-config.d/*.conf
-include /usr/local/etc/server-config.d/*.conf
-include /etc/server-config.d/*.conf
+include /etc/listen.d/*.conf
+include /usr/local/etc/listen.d/*.conf
+include /usr/lib/listen.d/*.conf
 
 # custom configurations may be added here
 ```
@@ -75,10 +75,10 @@ listen_range_<application-name>=16000-17000
 For example...
 
 ```
-# /etc/server-config.d/30_default.conf
+# /etc/listen.d/30_default.conf
 listen_ip=0.0.0.0
 
-# /etc/server-config.d/50_user.conf
+# /etc/listen.d/50_user.conf
 listen_ip=127.0.0.1
 ```
 
@@ -87,10 +87,10 @@ Would mean listen on `0.0.0.0` as well as on `127.0.0.1`.
 This disable listeners by previous lower priority configuration files, one could use `listen_ip=`. For example:
 
 ```
-# /etc/server-config.d/30_default.conf
+# /etc/listen.d/30_default.conf
 listen_ip=0.0.0.0
 
-# /etc/server-config.d/50_user.conf
+# /etc/listen.d/50_user.conf
 listen_ip=
 listen_ip=127.0.0.1
 ```
