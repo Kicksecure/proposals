@@ -1,4 +1,4 @@
-# Stackable Wrappers
+# Stackable Wrappers (Proposal 634)
 
 - Ticket: https://phabricator.whonix.org/T634
 - File: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
