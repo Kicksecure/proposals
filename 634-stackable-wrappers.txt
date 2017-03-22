@@ -1,7 +1,7 @@
 # Stackable Wrappers
 
 - Ticket: https://phabricator.whonix.org/T634
-- File: https://github.com/adrelanos/proposals/blob/master/634-stackable-wrappers.txt
+- File: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
 
 # Description
 
@@ -78,4 +78,4 @@ What do you think? How could this be implemented? What would be the best place t
 Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
 
 [0]: https://phabricator.whonix.org/T634
-[1]: https://github.com/adrelanos/proposals/blob/master/634-stackable-wrappers.txt
+[1]: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
