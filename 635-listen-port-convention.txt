@@ -28,11 +28,11 @@ Having these applications auto detect Whonix also does not seem like great solut
 May the following convention be suggested.
 
 * Parse in lexical order.
-** `/etc/listen.d`
-** `/usr/local/etc/listen.d`
 ** `/usr/lib/listen.d`
+** `/usr/local/etc/listen.d`
+** `/etc/listen.d`
 ** Optionally, custom folders
-** Similar to how systemd would parse these folders. I.e. for example start with parsing `/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/40_user.conf`, followed by `/usr/local/etc/listen.d/30_user.conf`, followed by `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf` and so forth.
+** Similar to how systemd would parse these folders. I.e. for example start with parsing `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf`, followed by `/usr/local/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/40_user.conf` and so forth.
 * The file used to group the configurations would be `/etc/listen.conf`, with the contents:
 
 
@@ -40,9 +40,9 @@ May the following convention be suggested.
 # lines starting with # are ignored
 
 # predefined
-include /etc/listen.d/*.conf
-include /usr/local/etc/listen.d/*.conf
 include /usr/lib/listen.d/*.conf
+include /usr/local/etc/listen.d/*.conf
+include /etc/listen.d/*.conf
 
 # custom configurations may be added here
 ```
