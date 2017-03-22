@@ -32,7 +32,7 @@ May the following convention be suggested.
 ** `/usr/local/etc/listen.d`
 ** `/usr/lib/listen.d`
 ** Optionally, custom folders
-** Similar to how systemd would parse these folders. I.e. for example start with parsing `/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/40_user.conf`, followed by `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf` and so forth.
+** Similar to how systemd would parse these folders. I.e. for example start with parsing `/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/40_user.conf`, followed by `/usr/local/etc/listen.d/30_user.conf`, followed by `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf` and so forth.
 * The file used to group the configurations would be `/etc/listen.conf`, with the contents:
 
 
