@@ -1,9 +1,7 @@
-# Stackable Wrappers
+# Stackable Wrappers (Proposal 634)
 
 - Ticket: https://phabricator.whonix.org/T634
-- File: https://github.com/adrelanos/proposals/blob/master/634-stackable-wrappers.txt
-
-Feedback on the ticket and pull requests on the repository are welcome.
+- File: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
 
 # Description
 
@@ -76,3 +74,8 @@ related:
 * firejail - Feature Request: Automatically starting programs under firejail - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=822693
 
 What do you think? How could this be implemented? What would be the best place to implement this?
+
+Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
+
+[0]: https://phabricator.whonix.org/T634
+[1]: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
