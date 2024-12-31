@@ -111,4 +111,4 @@ Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
 
 [0]: https://forums.whonix.org/t/write-draft-for-local-listener-standard-on-debian-devel/18775
 [1]: https://github.com/Whonix/proposals/blob/master/635-listen-port-convention.txt
-[2]: https://www.whonix.org/wiki/Whonix_Configuration_Files#dpkg_interactive_conflict_resolution_dialog
+[2]: https://www.kicksecure.com/wiki/Configuration_Files#dpkg_interactive_conflict_resolution_dialog
