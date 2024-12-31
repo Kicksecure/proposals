@@ -1,7 +1,7 @@
 # Listen Port Convention (Proposal 635)
 
 - Ticket: https://forums.whonix.org/t/write-draft-for-local-listener-standard-on-debian-devel/18775
-- File: https://github.com/Whonix/proposals/blob/master/635-listen-port-convention.md
+- File: https://github.com/Kicksecure/proposals/blob/master/635-listen-port-convention.md
 
 # Description
 
@@ -110,5 +110,5 @@ Any questions? Any suggestions? What do you think?
 Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
 
 [0]: https://forums.whonix.org/t/write-draft-for-local-listener-standard-on-debian-devel/18775
-[1]: https://github.com/Whonix/proposals/blob/master/635-listen-port-convention.md
+[1]: https://github.com/Kicksecure/proposals/blob/master/635-listen-port-convention.md
 [2]: https://www.kicksecure.com/wiki/Configuration_Files#dpkg_interactive_conflict_resolution_dialog
