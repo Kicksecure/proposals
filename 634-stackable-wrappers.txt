@@ -1,6 +1,6 @@
 # Stackable Wrappers (Proposal 634)
 
-- Ticket: https://phabricator.whonix.org/T634
+- Ticket: https://forums.whonix.org/t/write-draft-for-stackable-wrappers-on-debian-devel/18776
 - File: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
 
 # Description
@@ -77,5 +77,5 @@ What do you think? How could this be implemented? What would be the best place t
 
 Feedback on the ticket [0] and pull requests on the repository [1] are welcome.
 
-[0]: https://phabricator.whonix.org/T634
+[0]: https://forums.whonix.org/t/write-draft-for-stackable-wrappers-on-debian-devel/18776
 [1]: https://github.com/Whonix/proposals/blob/master/634-stackable-wrappers.txt
