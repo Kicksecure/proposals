@@ -38,7 +38,7 @@ Ideally, there would be something like an `/etc/wrapper.d` folder, where package
 * These can break various things such as AppArmor profiles.
 * Other weird things can happen. For example:
   * `~/.local/share/Ricochet/ricochet/ricochet.json` becomes
-  * `~/.local/share/Ricochet/ricochet.anondist-orig/ricochet.json`.
+  * `~/.local/share/Ricochet/ricochet.anondist-orig/ricochet.json` because ricochet names its configuration file based on the name of the binary.
 
 ### .desktop Files
 * `.desktop` files are not a solution, as they do not work for applications started from a terminal emulator or virtual terminal.
