@@ -72,7 +72,7 @@ Ideally, there would be something like an `/etc/wrapper.d` folder, where package
 * By calling, for example, `firefox`, first the `firejail` wrapper `/usr/lib/firejail/firefox` would run, remove itself (`/usr/lib/firejail/`) from `PATH`, prepend `firejail`, and run `firefox`. Perhaps another user-specific wrapper in `/usr/local/bin/firefox` could run that finally executes the real `firefox` program in `/usr/bin/firefox`.
 
 ### Real-World Example
-We at Whonix would like to prepend both `torsocks` (for stream isolation) and `firejail` (for containment) in front of `gpg`.
+Whonix would like to prepend both `torsocks` (for stream isolation) and `firejail` (for containment) in front of `gpg`.
 
 ## Related
 * `firejail` - Feature Request: Automatically starting programs under `firejail` - https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=822693
