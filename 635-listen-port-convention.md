@@ -29,8 +29,10 @@ Having these applications auto-detect Whonix does not seem like a great solution
   * `/usr/lib/listen.d`
   * `/usr/local/etc/listen.d`
   * `/etc/listen.d`
+  * `/run/listen.d`
+  * `$HOME/listen.d`
   * Optionally, custom folders
-  * Similar to how `systemd` parses these folders. For example, start with parsing `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf`, followed by `/usr/local/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/30_user.conf`, then `/etc/listen.d/40_user.conf`, and so forth.
+  * Similar to how `systemd` parses these folders. For example, start with parsing `/usr/lib/listen.d/30_default.conf`, followed by `/usr/lib/listen.d/31_other.conf`, followed by `/usr/local/etc/listen.d/30_user.conf`, followed by `/etc/listen.d/30_user.conf`, then `/etc/listen.d/40_user.conf`, followed by `/run/listen.d/30_autogen.conf`, followed by `$HOME/listen.d/30_user.conf` and so forth.
 * The file used to group the configurations would be `/etc/listen.conf`, with the contents:
 
 ```
@@ -40,11 +42,13 @@ Having these applications auto-detect Whonix does not seem like a great solution
 include /usr/lib/listen.d/*.conf
 include /usr/local/etc/listen.d/*.conf
 include /etc/listen.d/*.conf
+include /run/listen.d/*.conf
+include $HOME/listen.d/*.conf
 
 # custom configurations may be added here
 ```
 
-* In theory, any path could be added to this file, even within `$HOME`. However, the usefulness of adding configurations to `$HOME` instead of `/usr/` and `/etc/` is uncertain. It would enable customizations when the user lacks privileges to write outside `$HOME`, but running a server on such a system seems unlikely. Feedback on this is appreciated.
+* `$HOME`: Optional. It would enable customizations when the user lacks privileges to write outside `$HOME`, such as with the `user-sysmaint-split` pacakge installed.
 
 * `.conf` files would contain options like:
 
